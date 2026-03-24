@@ -21,16 +21,16 @@ window.addEventListener("load", setupStyles);
 
 function setupStyles() {
    // Create a link element for the page view styles
-   var pageStyles = document.createElement("link");
-   pageStyles.setAttribute("href", "./css/bc_page.css");
-   pageStyles.setAttribute("rel", "stylesheet");
-   pageStyles.setAttribute("disabled", "disabled");
+   var pageStyle = document.createElement("link");
+   pageStyle.setAttribute("href", "../styles/bc_page.css");
+   pageStyle.setAttribute("rel", "stylesheet");
+   pageStyle.setAttribute("disabled", "disabled");
 
    // Append the link element to the document head
-   document.head.appendChild(pageStyles);
-   pageStyles.disabled = true;
+   document.head.appendChild(pageStyle);
+   pageStyle.disabled = true;
 
-   // Inser buttons for the style switcher
+   // Insert buttons for the style switcher
    var buttonDIV = document.createElement("div");
    buttonDIV.setAttribute("id", "styleButtons");
 
@@ -59,30 +59,30 @@ function setupStyles() {
       
    document.styleSheets[document.styleSheets.length-1].insertRule(
       "div#styleButtons input { \
-      background-color: rgba(68, 94, 186, 0.6); \
-      border: 3px solid rgba(0, 24, 123, 0.6); \
-      border-radius: 50%; \
-      cursor: pointer; \
-      color: white; \
-      display: inline-block; \
-      font-style: 1.2em; \
-      height: 60px; \
-      margin: 5px 10px; \
-      width: 100px; \ }", 1);
+         background-color: rgba(68, 94, 186, 0.6); \
+         border: 3px solid rgba(0, 24, 123, 0.6); \
+         border-radius: 50%; \
+         cursor: pointer; \
+         color: white; \
+         display: inline-block; \
+         font-size: 1.2em; \
+         height: 60px; \
+         margin: 5px 10px; \
+         width: 100px; \
+      }", 1);
 
-      document.styleSheets[document.styleSheets.length-1].insertRule(
-         "@media print { \
-            div#styleButtons { \
-               display: none; \
-            }\
-         }", 2);
+   document.styleSheets[document.styleSheets.length-1].insertRule(
+      "@media print { \
+         div#styleButtons { \
+            display: none; \
+         } \
+      }",2);
 
-      //Turn the page View style off and on
       webButton.onclick = function() {
-         pageStyles.disabled = true;
-      }
+      pageStyle.disabled = true;
+   }
 
-      pageButton.onclick = function() {
-         pageStyles.disabled = false;
-      };
+   pageButton.onclick = function() {
+      pageStyle.disabled = false;
+   };
 }
