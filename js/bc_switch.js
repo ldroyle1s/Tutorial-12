@@ -22,7 +22,7 @@ window.addEventListener("load", setupStyles);
 function setupStyles() {
    // Create a link element for the page view styles
    var pageStyles = document.createElement("link");
-   pageStyles.setAttribute("href", "../css/bc_page.css");
+   pageStyles.setAttribute("href", "./css/bc_page.css");
    pageStyles.setAttribute("rel", "stylesheet");
    pageStyles.setAttribute("disabled", "disabled");
 
